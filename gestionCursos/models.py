@@ -9,3 +9,5 @@ class Curso( Model ):
 	fechaInicio = M.DateTimeField()
 	fechaFin = M.DateTimeField()
 	numeroEstudiantes = M.IntegerField()
+ 
+	

@@ -1,7 +1,15 @@
 from django.urls import path
 
-from .views import homePageView
+from .views import home
+
+from gestionUsuarios.views import usuariosApi
+from gestionCursos.views import cursosApi
 
 urlpatterns = [
-    path("", homePageView, name="home"),
+    
+    path("", home, name="home",),
+    
+    path("usuarios/", usuariosApi, name="usuarios" ),
+    path("cursos/", cursosApi, name="cursos" ),
+    
 ]
