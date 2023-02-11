@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'psqlextra',
     'fly',
-    'gestionUsuarios',
-    'gestionCursos',
+    'estudiantesCursos',
 ]
 
 MIDDLEWARE = [
