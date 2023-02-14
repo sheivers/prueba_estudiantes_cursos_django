@@ -123,7 +123,8 @@ def estudiantes(request):
 		
 		try:
 			listaData = []
-			cursor = Estudiante.objects.filter()
+			cursor = Estudiante.objects.filter().order_by('id')
+
 
 			for info in cursor:
 				listaData.append( info.toJson() )

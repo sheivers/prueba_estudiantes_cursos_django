@@ -3,3 +3,4 @@ Django
 gunicorn
 django-postgres-extra
 psycopg2-binary
+django-cors-headers
