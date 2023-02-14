@@ -1,13 +1,15 @@
 from django.urls import path
 
-from .views import home
+from .views import app
 
 from estudiantesCursos.views import cursos, estudiantes, eliminarEstudiante, eliminarCurso
 
+
 urlpatterns = [
     
-    path("", home, name="home",),
-    
+    path('', lambda r: app(r, 'index.html')),
+    path('<path:resource>', app),
+
     path("estudiantes/", estudiantes, name="estudiantes" ),
     path("estudiantes/<int:id>/", eliminarEstudiante, name="eliminarEstudiante" ),
     

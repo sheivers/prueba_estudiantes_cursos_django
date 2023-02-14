@@ -1,9 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.http import JsonResponse
-from usuariostest.models import ( Respuesta, parametros )
-from estudiantesCursos.models import ( Curso, Estudiante )
+from django.views.static import serve
+import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FLUTTER_WEB_APP = os.path.join(BASE_DIR, 'app')
 
-def home(request):
-    return JsonResponse(Respuesta(st="0.0").trans() )
+def app(request, resource):
+    return serve(request, resource, FLUTTER_WEB_APP)
