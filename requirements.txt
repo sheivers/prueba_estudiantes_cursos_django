@@ -2,3 +2,4 @@ markupsafe==2.0.1
 Django
 gunicorn
 django-postgres-extra
+psycopg2-binary

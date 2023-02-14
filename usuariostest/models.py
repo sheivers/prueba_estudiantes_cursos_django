@@ -11,24 +11,23 @@ class Respuesta( object ):
 	def trans(self):
      
 		response = {}
+		
+		if( self.message == None ):
+			# Respuestas positivas
+			if( self.status == "0.0"):
+				self.message = "Petición entregada correctamente."; self.check = True
 
-		# Respuestas positivas
-		if( self.status == "0.0"):
-			self.message = "Petición entregada correctamente."; self.check = True
+			# Respuestas Negativas
+			if( self.status == "1.0"):
+				self.message = "Petición entregada incorrectamente."; self.check = True
 
-		# Respuestas Negativas
-		if( self.status == "1.0"):
-			self.message = "Petición entregada incorrectamente."; self.check = True
+			# Peticiones con error
+			if( self.status == "2.0"):
+				self.message = "Parametros incorrectos.";self.check = True
 
-		# Peticiones con error
-		if( self.status == "2.0"):
-			self.message = "Parametros incorrectos."
-			self.check = True
-
-		# Peticiones con error
-		if( self.status == "3.0"):
-			self.message = "Método no valido."
-			self.check = True
+			# Peticiones con error
+			if( self.status == "3.0"):
+				self.message = "Método no valido.";self.check = True
 
 		if( self.status != ""):
 			response["status"] = self.status
